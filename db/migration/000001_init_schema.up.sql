@@ -2,7 +2,7 @@ CREATE TABLE "accounts"
 (
     "id"         bigserial PRIMARY KEY,
     "owner"      varchar     NOT NULL,
-    "balance"    decimal     NOT NULL,
+    "balance"    NUMERIC(15, 2)     NOT NULL,
     "currency"   varchar     NOT NULL,
     "created_at" timestamptz NOT NULL DEFAULT (now())
 );
@@ -11,7 +11,7 @@ CREATE TABLE "entries"
 (
     "id"         bigserial PRIMARY KEY,
     "account_id" bigint      NOT NULL,
-    "amount"     decimal     NOT NULL,
+    "amount"     NUMERIC(15, 2)     NOT NULL,
     "created_at" timestamptz NOT NULL DEFAULT (now())
 );
 
@@ -20,7 +20,7 @@ CREATE TABLE "transfers"
     "id"              bigserial PRIMARY KEY,
     "from_account_id" bigint     NOT NULL,
     "to_account_id"   bigint     NOT NULL,
-    "amount"          decimal     NOT NULL,
+    "amount"          NUMERIC(15, 2)     NOT NULL,
     "created_at"      timestamptz NOT NULL DEFAULT (now())
 );
 

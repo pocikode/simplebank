@@ -1,8 +1,0 @@
-ALTER TABLE accounts
-    ALTER COLUMN balance TYPE DECIMAL(10, 2);
-
-ALTER TABLE entries
-    ALTER COLUMN amount TYPE DECIMAL(10, 2);
-
-ALTER TABLE transfers
-    ALTER COLUMN amount TYPE DECIMAL(10, 2);
